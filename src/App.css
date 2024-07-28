@@ -1,0 +1,42 @@
+:root {
+    --background-color: #18181b;
+    --text-color: #42BD86;
+    --primary-color: #0ebc36;
+    --secondary-color: #AD61FF;
+    --containers: #2b3333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+}
+
+h1,h2,h3, p{
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,p{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+p{
+    font-size: 2vw;
+    font-weight: 320;
+}
+
+.sectionTitle{
+    margin-bottom: 30px;
+}

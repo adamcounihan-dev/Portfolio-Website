@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    height: 100vh;
+    min-height: 500px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20rem;
+    border: 5px solid var(--containers);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.socialMedia a {
+    margin: 0;
+}
+
+.socialMedia img {
+    width: 45px;
+}
+
+.title{
+    max-width: 24ch;
+    align-self: center;
+    color: var(--primary-color);
+}
+
+.description {
+    max-width: 24ch;
+    align-self: center;
+    color: var(--text-color);
+}
