@@ -3,39 +3,44 @@
     --dark-bg-color: #1e3a33;
     --dark-text-color: #fdfdfd;
     --dark-accent-color: #dfa831;
+    --dark-link-color: #00c2ff;
     --dark-container-bg-color: #22292f;
 
     /* Light Theme Variables */
-    --light-bg-color: #fff;
-    --light-text-color: #fff;
-    --light-accent-color: #fff;
-    --light-container-bg-color: #fff;
+    --light-bg-color: #f0eee9;
+    --light-text-color: #000000;
+    --light-accent-color: #177d00;
+    --light-link-color: #005be9;
+    --light-container-bg-color: #cccccc;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
-    background-color: var(--dark-bg-color);
+    background-color: transparent;
     display: flex;
     justify-content: center;
-    margin: 0 auto 60px;
-}
-
-h1,h2,h3, p{
-    color: var(--dark-text-color);
     margin: 0;
     padding: 0;
 }
 
-h1,h2,h3,p{
+h1,h2,h3, p{
+    margin: 0;
+    padding: 0;
+}
+
+h2,h3,p, a{
     font-family: 'Poppins', sans-serif;
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 p{
