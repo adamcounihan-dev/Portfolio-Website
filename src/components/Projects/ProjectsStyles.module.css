@@ -36,9 +36,35 @@
     text-decoration: underline;
 }
 
-.title{
+.title {
     max-width: 24ch;
     align-self: center;
     color: var(--light-accent-color);
     margin-top: 20px;
+}
+
+.languagesContainer {
+    margin-top: 10px;
+}
+
+.languagesTitle {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.languagesList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.languageItem {
+    background-color: var(--light-accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
