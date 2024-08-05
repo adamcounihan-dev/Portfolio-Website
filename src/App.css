@@ -44,10 +44,20 @@ h1{
 }
 
 p{
-    font-size: 2vw;
+    font-size: 2rem;
     font-weight: 320;
 }
 
 .sectionTitle{
     margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
 }
