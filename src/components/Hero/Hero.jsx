@@ -16,10 +16,10 @@ function Hero() {
                     University of Kent (B.Sc.)
                 </p>
                 <div className={styles.socialMedia}>
-                    <a href="https://github.com/adamlcounihan/" target="_blank">
+                    <a href="https://github.com/adamlcounihan/" target="_blank" rel="noopener noreferrer">
                         <img src={githubIcon} alt="Github icon"/>
                     </a>
-                    <a href="https://linkedin.com/in/adamlcounihan/" target="_blank">
+                    <a href="https://linkedin.com/in/adamlcounihan/" target="_blank" rel="noopener noreferrer">
                         <img src={linkedinIcon} alt="Linkedin icon"/>
                     </a>
                 </div>
