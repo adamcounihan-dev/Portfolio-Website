@@ -9,7 +9,7 @@ const skills = {
 
 function Skills() {
     return (
-        <div id="skills" className={styles.skillsContainer}>
+        <section id="skills" className={styles.skillsContainer}>
             <h1 className={styles.title}>Skills</h1>
             <div className={styles.gridWrapper}>
                 <div className={styles.gridContainer}>
@@ -27,7 +27,7 @@ function Skills() {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
