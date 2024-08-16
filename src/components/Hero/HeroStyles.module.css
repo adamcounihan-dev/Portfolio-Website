@@ -51,16 +51,16 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
+    height: 100%;
+    z-index: 1;
     transform: rotate(180deg);
 }
 
 .shapeDivider svg {
     position: relative;
     display: block;
-    width: 100%;
-    height: auto;
+    width: calc(100% + 1.3px);
+    height: 50px;
 }
 
 .shapeFill {
@@ -82,8 +82,5 @@
     .title {
         font-size: 3.5rem;
         max-width: 7ch;
-    }
-    .shapeDivider svg {
-        height: 50px;
     }
 }
