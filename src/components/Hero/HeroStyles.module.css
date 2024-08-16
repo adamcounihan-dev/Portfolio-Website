@@ -9,21 +9,14 @@
     width: 100vw;
     align-items: center;
     background-color: var(--dark-bg-color);
-}
-
-.hero {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 20rem;
-    border: 5px solid var(--dark-container-bg-color);
+    position: relative;
 }
 
 .info {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    animation: fadeUp 1.5s ease-out forwards;
 }
 
 .socialMedia {
@@ -40,8 +33,8 @@
     width: 45px;
 }
 
-.title{
-    max-width: 24ch;
+.title {
+    font-size: 5rem;
     align-self: center;
     color: var(--dark-accent-color);
 }
@@ -50,18 +43,47 @@
     max-width: 24ch;
     align-self: center;
     color: var(--dark-text-color);
+    animation: fadeUp 1.5s ease-out forwards;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
+.shapeDivider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
 
-    .hero {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        margin: 0 auto;
+.shapeDivider svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.shapeFill {
+    fill: var(--light-bg-color);
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+        max-width: 7ch;
+    }
+    .shapeDivider svg {
+        height: 50px;
     }
 }

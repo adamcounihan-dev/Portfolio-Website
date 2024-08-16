@@ -2,9 +2,10 @@
     /* Dark Theme Variables */
     --dark-bg-color: #1e3a33;
     --dark-text-color: #fdfdfd;
-    --dark-accent-color: #dfa831;
+    --dark-accent-color: #15c535;
     --dark-link-color: #00c2ff;
     --dark-container-bg-color: #22292f;
+
 
     /* Light Theme Variables */
     --light-bg-color: #f0eee9;
@@ -12,6 +13,8 @@
     --light-accent-color: #177d00;
     --light-link-color: #005be9;
     --light-container-bg-color: #cccccc;
+
+    --navbar-color: #165b45;
 }
 
 * {

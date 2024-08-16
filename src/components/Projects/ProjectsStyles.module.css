@@ -4,7 +4,8 @@
     gap: 20px;
     align-items: center;
     background-color: var(--light-bg-color);
-    padding-bottom: 20px;
+    padding-bottom: 60px;
+    position: relative;
 }
 
 .projectContainer {
@@ -67,4 +68,24 @@
     border-radius: 5px;
     font-size: 1em;
     font-family: 'IBM Plex Sans', sans-serif;
+}
+.customShapeDividerBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.customShapeDividerBottom svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 92px;
+}
+
+.shapeFill {
+    fill: var(--dark-bg-color);
 }
