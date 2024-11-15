@@ -1,4 +1,4 @@
-import styles from '../Skills/SkillsStyles.module.css';
+import styles from './SkillsStyles.module.css';
 
 const skills = {
     Languages: ['HTML', 'CSS', 'JavaScript', 'Java', 'Python', 'PHP', 'C', 'C#'],

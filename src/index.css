@@ -1,0 +1,66 @@
+:root {
+    /* Dark Theme Variables */
+    --dark-bg-color: #1e3a33;
+    --dark-text-color: #fdfdfd;
+    --dark-accent-color: #15c535;
+    --dark-link-color: #00c2ff;
+    --dark-container-bg-color: #22292f;
+
+
+    /* Light Theme Variables */
+    --light-bg-color: #f0eee9;
+    --light-text-color: #000000;
+    --light-accent-color: #177d00;
+    --light-link-color: #005be9;
+    --light-container-bg-color: #cccccc;
+
+    --navbar-color: #165b45;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3, p{
+    margin: 0;
+    padding: 0;
+}
+
+h2,h3,p, a{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+p{
+    font-size: 2rem;
+    font-weight: 320;
+}
+
+.sectionTitle{
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+}

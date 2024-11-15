@@ -1,8 +1,8 @@
-import styles from './HeroStyles.module.css';
-import githubIcon from '../../assets/github.svg';
-import linkedinIcon from '../../assets/linkedin.svg';
+import styles from './HomeStyles.module.css';
+import githubIcon from '/src/assets/github.svg';
+import linkedinIcon from '/src/assets/linkedin.svg';
 
-function Hero() {
+function Home() {
     return (
         <section id="hero" className={styles.container}>
             <div className={styles.info}>
@@ -37,4 +37,4 @@ function Hero() {
     );
 }
 
-export default Hero;
+export default Home;
