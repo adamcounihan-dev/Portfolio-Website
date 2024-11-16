@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--navbar-color);
+    background: var(--navbar-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -13,8 +13,9 @@
 
 .logo {
     font-size: 1.25rem;
-    color: var(--dark-text-color);
+    color: var(--text-color);
     padding-left: 1rem;
+    cursor: default;
 }
 
 .navList {
@@ -88,7 +89,7 @@
     right: -250px;
     width: 250px;
     height: 100vh;
-    background-color: var(--dark-bg-color);
+    background-color: var(--sidebar-color);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     transition: right 0.3s;
     z-index: 999;

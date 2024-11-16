@@ -1,20 +1,12 @@
 :root {
-    /* Dark Theme Variables */
-    --dark-bg-color: #1e3a33;
-    --dark-text-color: #fdfdfd;
-    --dark-accent-color: #15c535;
-    --dark-link-color: #00c2ff;
-    --dark-container-bg-color: #22292f;
+    --bg-color: #1e3a33;
+    --text-color: #f5f5f5;
+    --accent-color: #15c535;
+    --link-color: #00c2ff;
+    --container-bg-color: rgb(35, 35, 35);
 
-
-    /* Light Theme Variables */
-    --light-bg-color: #f0eee9;
-    --light-text-color: #000000;
-    --light-accent-color: #177d00;
-    --light-link-color: #005be9;
-    --light-container-bg-color: #cccccc;
-
-    --navbar-color: #165b45;
+    --navbar-color: rgba(44, 44, 44, 0.95);
+    --sidebar-color: #165b45;
 }
 
 * {
