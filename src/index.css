@@ -1,12 +1,12 @@
 :root {
     --bg-color: #1e3a33;
     --text-color: #f5f5f5;
-    --accent-color: #15c535;
+    --accent-color: #045b14;
     --link-color: #00c2ff;
-    --container-bg-color: rgb(35, 35, 35);
-
-    --navbar-color: rgba(44, 44, 44, 0.95);
+    --container-bg-color: #232323;
+    --navbar-color: #2A2D2CFF;
     --sidebar-color: #165b45;
+    --footer-color: #052b1a;
 }
 
 * {

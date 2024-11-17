@@ -1,6 +1,6 @@
 .container {
     text-align: center;
-    background-color: #052b1a;
+    background-color: var(--footer-color);
     height: 70px;
     align-content: center;
 }
