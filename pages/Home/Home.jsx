@@ -8,7 +8,7 @@ function Home() {
             <div className={styles.info}>
                 <h1 className={styles.title}>Adam Counihan</h1>
                 <p className={styles.description}>
-                    Computer Science student at University of Kent, combining analytical thinking with a passion for creative design.
+                    A Computer Science student at University of Kent, blending precision with creativity to build solutions that are both technically refined and visually inspiring.
                 </p>
                 <div className={styles.socialMedia}>
                     <a href="https://github.com/adamlcounihan/" target="_blank" rel="noopener noreferrer">
