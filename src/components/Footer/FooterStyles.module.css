@@ -1,9 +1,11 @@
 .container {
     text-align: center;
-    background-color: var(--dark-bg-color);
+    background-color: var(--footer-color);
+    height: 70px;
+    align-content: center;
 }
 
 .container p{
     font-size: 18px;
-    color: var(--dark-text-color);
+    color: #ffffff;
 }

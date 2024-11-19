@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import styles from './NavbarStyles.module.css';
 
 function Navbar() {
@@ -33,10 +33,7 @@ function Navbar() {
                 <ul className={`${styles.navList} ${isMobile && isMenuOpen ? styles.menuOpen : ''}`}>
                     <li className={styles.navItem}>
                         <Link
-                            to="hero"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >
@@ -45,10 +42,7 @@ function Navbar() {
                     </li>
                     <li className={styles.navItem}>
                         <Link
-                            to="projects"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/projects"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >
@@ -57,10 +51,7 @@ function Navbar() {
                     </li>
                     <li className={styles.navItem}>
                         <Link
-                            to="skills"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/skills"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >
@@ -78,10 +69,7 @@ function Navbar() {
                 <ul className={styles.mobileNavList}>
                     <li className={styles.mobileNavItem}>
                         <Link
-                            to="hero"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >
@@ -90,10 +78,7 @@ function Navbar() {
                     </li>
                     <li className={styles.mobileNavItem}>
                         <Link
-                            to="projects"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/projects"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >
@@ -102,10 +87,7 @@ function Navbar() {
                     </li>
                     <li className={styles.mobileNavItem}>
                         <Link
-                            to="skills"
-                            smooth={true}
-                            duration={500}
-                            offset={-64}
+                            to="/skills"
                             className={styles.navLink}
                             onClick={toggleMenu}
                         >

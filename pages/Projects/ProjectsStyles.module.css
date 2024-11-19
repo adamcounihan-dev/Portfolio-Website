@@ -3,19 +3,31 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    background-color: var(--light-bg-color);
-    padding-bottom: 60px;
+    background: linear-gradient(135deg, #024637, #034323, #025f49);
+    padding-top: 50px;
     position: relative;
+    height: calc(100dvh - 70px);
+    width: 100vw;
+    color: var(--text-color);
+}
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    overflow-x: visible;
 }
 
 .projectContainer {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: var(--light-container-bg-color);
-    margin-bottom: 20px;
+    background-color: var(--container-bg-color);
+    margin: 20px
 }
 
 .projectTitle {
@@ -29,7 +41,7 @@
 }
 
 .projectLink {
-    color: var(--light-link-color);
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -38,19 +50,17 @@
 }
 
 .title {
-    max-width: 24ch;
     align-self: center;
-    color: var(--light-accent-color);
-    margin-top: 20px;
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3rem;
+    text-align: center;
+    flex-shrink: 0;
+    text-decoration: underline;
 }
 
 .languagesContainer {
     margin-top: 10px;
-}
-
-.languagesTitle {
-    font-size: 1.2em;
-    margin-bottom: 5px;
 }
 
 .languagesList {
@@ -62,30 +72,16 @@
 }
 
 .languageItem {
-    background-color: var(--light-accent-color);
+    background-color: var(--accent-color);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1em;
     font-family: 'IBM Plex Sans', sans-serif;
 }
-.customShapeDividerBottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
 
-.customShapeDividerBottom svg {
-    position: relative;
-    display: block;
-    width: calc(135% + 1.3px);
-    height: 100px;
-}
-
-.shapeFill {
-    fill: var(--dark-bg-color);
+@media (max-width: 480px) {
+    .projectsGrid {
+        grid-template-columns: 1fr;
+    }
 }
