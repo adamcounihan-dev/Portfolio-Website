@@ -36,7 +36,7 @@ function Projects() {
             <div className={styles.projectsGrid}>
                 {getProjects().map((project, index) => (
                     <div key={index} className={styles.projectContainer}>
-                        <h3 className={styles.projectTitle}>{project.title}</h3>
+                        <h2 className={styles.projectTitle}>{project.title}</h2>
                         <p className={styles.projectDescription}>{project.description}</p>
                         <a
                             href={project.link}

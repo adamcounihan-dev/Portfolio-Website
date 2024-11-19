@@ -14,7 +14,7 @@ function Skills() {
             <div className={styles.skillsGrid}>
                 {Object.entries(skills).map(([category, items]) => (
                     <div key={category} className={styles.skillCategory}>
-                        <h3 className={styles.categoryTitle}>{category}</h3>
+                        <h2 className={styles.categoryTitle}>{category}</h2>
                         <div className={styles.skillsContainer}>
                             {items.map((skill, index) => (
                                 <div key={index} className={styles.skillItem}>
