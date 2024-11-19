@@ -8,7 +8,7 @@
     min-height: 500px;
     width: 100vw;
     align-items: center;
-    background: url("src/assets/background.svg");
+    background: url("/src/assets/background.svg");
     position: relative;
     background-size: cover;
 }
