@@ -59,7 +59,11 @@ function Navbar() {
                         </Link>
                     </li>
                 </ul>
-                <button className={styles.hamburger} onClick={toggleMenu}>
+                <button
+                    className={styles.hamburger}
+                    onClick={toggleMenu}
+                    aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                >
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
