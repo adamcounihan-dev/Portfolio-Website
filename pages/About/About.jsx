@@ -1,4 +1,5 @@
 import styles from './AboutStyles.module.css';
+import heroImg from '/src/assets/hero-img.webp';
 
 function About() {
     return (
@@ -6,11 +7,7 @@ function About() {
             <h1 className={styles.title}>About Me</h1>
             <div className={styles.aboutContent}>
                 <div className={styles.profileContainer}>
-                    <img
-                        src="/src/assets/hero-img.webp"
-                        alt="Adam Counihan"
-                        className={styles.profileImage}
-                    />
+                    <img src={heroImg} alt="Adam Counihan" className={styles.profileImage}/>
                 </div>
                 <p className={styles.text}>
                     Hi, I’m Adam Counihan – a Computer Science student at the University of Kent with a passion for
