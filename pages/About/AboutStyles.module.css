@@ -81,13 +81,4 @@
         font-size: 1rem;
         padding: 15px;
     }
-
-    .profileContainer {
-        width: 200px;
-        height: 200px;
-    }
-
-    .text {
-        text-align: center;
-    }
 }
