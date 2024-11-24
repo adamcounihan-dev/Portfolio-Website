@@ -4,8 +4,8 @@
     justify-content: center;
     gap: 20px;
     text-align: center;
-    height: calc(100dvh - 70px);
-    min-height: 500px;
+    height: auto;
+    min-height: calc(100dvh - 70px);
     width: 100vw;
     align-items: center;
     background: url("/src/assets/background.svg");
@@ -22,6 +22,8 @@
     background-color: var(--container-bg-color);
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -68,6 +70,37 @@
     transform: scale(1.1);
 }
 
+.ctaButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: visible;
+    position: relative;
+}
+
+.ctaButtons .button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 175px;
+
+}
+
+.ctaButtons .button:hover {
+    transform: scale(1.05);
+}
+
+.ctaButtons .button:active {
+    transform: scale(1);
+}
 
 @media screen and (max-width: 768px) {
     .title {
@@ -84,7 +117,14 @@
         align-items: center;
     }
 
-    .info{
-        margin-top: 50px;
+    .ctaButtons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ctaButtons .button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
     }
 }

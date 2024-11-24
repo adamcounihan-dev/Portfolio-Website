@@ -1,6 +1,7 @@
 import styles from './HomeStyles.module.css';
 import githubIcon from '/src/assets/github.svg';
 import linkedinIcon from '/src/assets/linkedin.svg';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -10,6 +11,14 @@ function Home() {
                 <p className={styles.description}>
                     A Computer Science student at University of Kent, blending precision with creativity to build solutions that are both technically refined and visually inspiring.
                 </p>
+                <div className={styles.ctaButtons}>
+                    <Link to="/projects" className={styles.button}>
+                        See My Projects
+                    </Link>
+                    <Link to="/about" className={styles.button}>
+                        Learn More About Me
+                    </Link>
+                </div>
                 <div className={styles.socialMedia}>
                     <a href="https://github.com/adamlcounihan/" target="_blank" rel="noopener noreferrer">
                         <img className={styles.icon} src={githubIcon} alt="Github icon"/>

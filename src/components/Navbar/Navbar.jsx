@@ -42,6 +42,15 @@ function Navbar() {
                     </li>
                     <li className={styles.navItem}>
                         <Link
+                            to="/about"
+                            className={styles.navLink}
+                            onClick={toggleMenu}
+                        >
+                            About
+                        </Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link
                             to="/projects"
                             className={styles.navLink}
                             onClick={toggleMenu}
@@ -59,7 +68,11 @@ function Navbar() {
                         </Link>
                     </li>
                 </ul>
-                <button className={styles.hamburger} onClick={toggleMenu}>
+                <button
+                    className={styles.hamburger}
+                    onClick={toggleMenu}
+                    aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                >
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
                     <span className={styles.bar}></span>
@@ -74,6 +87,15 @@ function Navbar() {
                             onClick={toggleMenu}
                         >
                             Home
+                        </Link>
+                    </li>
+                    <li className={styles.mobileNavItem}>
+                        <Link
+                            to="/about"
+                            className={styles.navLink}
+                            onClick={toggleMenu}
+                        >
+                            About
                         </Link>
                     </li>
                     <li className={styles.mobileNavItem}>
