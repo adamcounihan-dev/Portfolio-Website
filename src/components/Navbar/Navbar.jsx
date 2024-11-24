@@ -42,6 +42,15 @@ function Navbar() {
                     </li>
                     <li className={styles.navItem}>
                         <Link
+                            to="/about"
+                            className={styles.navLink}
+                            onClick={toggleMenu}
+                        >
+                            About
+                        </Link>
+                    </li>
+                    <li className={styles.navItem}>
+                        <Link
                             to="/projects"
                             className={styles.navLink}
                             onClick={toggleMenu}
@@ -78,6 +87,15 @@ function Navbar() {
                             onClick={toggleMenu}
                         >
                             Home
+                        </Link>
+                    </li>
+                    <li className={styles.mobileNavItem}>
+                        <Link
+                            to="/about"
+                            className={styles.navLink}
+                            onClick={toggleMenu}
+                        >
+                            About
                         </Link>
                     </li>
                     <li className={styles.mobileNavItem}>
