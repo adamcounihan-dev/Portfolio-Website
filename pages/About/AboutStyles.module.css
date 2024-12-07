@@ -7,7 +7,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
-    height: auto;
     min-height: calc(100dvh - 70px);
     width: 100vw;
     color: var(--text-color);
@@ -23,62 +22,157 @@
     text-decoration: underline;
 }
 
-.aboutContent {
+.contentContainer {
     max-width: 1000px;
-    margin: 20px;
+    width: 100%;
     padding: 20px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "profile bio"
+        "skills skills";
+}
+
+.profileContainer {
     background-color: var(--container-bg-color);
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-    font-size: 1.2rem;
-    line-height: 1.6;
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    grid-area: profile;
+}
+
+.profileImage {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 1px solid #ccc;
 }
 
 .text {
     flex: 2;
     font-size: 1.2rem;
     color: var(--text-color);
+    margin: 1rem;
 }
 
-.text strong {
-    color: var(--accent-color);
-    font-weight: bold;
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 35px;
+    overflow-x: visible;
 }
 
-.text em {
-    font-style: italic;
-    color: #eee;
+.button {
+    padding: 8px 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: underline;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 240px;
 }
 
-.profileContainer {
-    flex-shrink: 0;
-    width: 300px;
-    height: 300px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    background: var(--container-bg-color);
+.button:hover {
+    transform: scale(1.05);
 }
 
-.profileImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.button:active {
+    transform: scale(1);
+}
+
+.bioContainer {
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+    grid-area: bio;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    grid-area: skills;
+    padding-top: 20px;
+}
+
+.skillCategory {
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.skillCategoryTitle {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.skillList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skillItem {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #33ae71;
+}
+
+@media (max-width: 915px) {
+    .skillsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+    .contentContainer {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile"
+            "bio"
+            "skills";
+    }
+
     .title {
         font-size: 2.5rem;
     }
 
-    .aboutContent {
-        flex-direction: column;
-        align-items: center;
-        font-size: 1rem;
-        padding: 15px;
+    .profileContainer, .bioContainer {
+        height: auto;
+    }
+
+    .skillsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skillsContainer {
+        grid-template-columns: 1fr;
     }
 }
