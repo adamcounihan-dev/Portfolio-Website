@@ -11,6 +11,8 @@ import javaLogo from '/src/assets/skills/java.svg';
 import pythonLogo from '/src/assets/skills/python.svg';
 import phpLogo from '/src/assets/skills/php.svg';
 import cLogo from '/src/assets/skills/c.svg';
+import cSharpLogo from '/src/assets/skills/csharp.svg';
+import codeigniterLogo from '/src/assets/skills/codeigniter.svg';
 import nodejsLogo from '/src/assets/skills/nodejs.svg';
 import expressLogo from '/src/assets/skills/express.svg';
 import mysqlLogo from '/src/assets/skills/mysql.svg';
@@ -31,6 +33,8 @@ const skills = {
         { name: 'Python', logo: pythonLogo },
         { name: 'PHP', logo: phpLogo },
         { name: 'C', logo: cLogo },
+        { name: 'C#', logo: cSharpLogo },
+        { name: 'CodeIgniter', logo: codeigniterLogo },
         { name: 'Node.js', logo: nodejsLogo },
         { name: 'Express.js', logo: expressLogo }
     ],
