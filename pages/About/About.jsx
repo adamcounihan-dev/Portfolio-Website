@@ -2,11 +2,46 @@ import styles from './AboutStyles.module.css';
 import heroImg from '/src/assets/hero-img.webp';
 import { Link } from 'react-router-dom';
 
+import htmlLogo from '/src/assets/skills/html.svg';
+import cssLogo from '/src/assets/skills/css.svg';
+import javascriptLogo from '/src/assets/skills/javascript.svg';
+import reactLogo from '/src/assets/skills/react.svg';
+import viteLogo from '/src/assets/skills/vite.svg';
+import javaLogo from '/src/assets/skills/java.svg';
+import pythonLogo from '/src/assets/skills/python.svg';
+import phpLogo from '/src/assets/skills/php.svg';
+import cLogo from '/src/assets/skills/c.svg';
+import nodejsLogo from '/src/assets/skills/nodejs.svg';
+import expressLogo from '/src/assets/skills/express.svg';
+import mysqlLogo from '/src/assets/skills/mysql.svg';
+import unixLogo from '/src/assets/skills/unix.svg';
+import figmaLogo from '/src/assets/skills/figma.svg';
+import dockerLogo from '/src/assets/skills/docker.svg';
+
 const skills = {
-    'Frontend': ['HTML', 'CSS', 'JavaScript', 'React.js', 'Vite'],
-    'Backend': ['Java', 'Python', 'PHP', 'C', 'C#', 'Node.js', 'Express.js', 'CodeIgniter'],
-    'Database Management': ['MySQL'],
-    'Tools and Platforms': ['Unix', 'Figma', 'Adobe XD', 'GitHub', 'Docker']
+    'Frontend': [
+        { name: 'HTML', logo: htmlLogo },
+        { name: 'CSS', logo: cssLogo },
+        { name: 'JavaScript', logo: javascriptLogo },
+        { name: 'React.js', logo: reactLogo },
+        { name: 'Vite', logo: viteLogo }
+    ],
+    'Backend': [
+        { name: 'Java', logo: javaLogo },
+        { name: 'Python', logo: pythonLogo },
+        { name: 'PHP', logo: phpLogo },
+        { name: 'C', logo: cLogo },
+        { name: 'Node.js', logo: nodejsLogo },
+        { name: 'Express.js', logo: expressLogo }
+    ],
+    'Database Management': [
+        { name: 'MySQL', logo: mysqlLogo }
+    ],
+    'Tools and Platforms': [
+        { name: 'Unix', logo: unixLogo },
+        { name: 'Figma', logo: figmaLogo },
+        { name: 'Docker', logo: dockerLogo }
+    ]
 };
 
 const certifications = [
@@ -51,7 +86,10 @@ function About() {
                             <h3 className={styles.skillCategoryTitle}>{category}</h3>
                             <ul className={styles.skillList}>
                                 {skills[category].map((skill, index) => (
-                                    <li key={index} className={styles.skillItem}>{skill}</li>
+                                    <li key={index} className={styles.skillItem}>
+                                        <img src={skill.logo} alt={`${skill.name} logo`} className={styles.skillLogo} />
+                                        {skill.name}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
