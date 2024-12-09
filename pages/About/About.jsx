@@ -106,7 +106,7 @@ function About() {
                 </div>
 
                 <div className={styles.quotesContainer}>
-                    <h2 className={styles.containerTitle}>Favorite Quotes</h2>
+                    <h2 className={styles.containerTitle}>Favourite Quotes</h2>
                     <ul className={styles.quoteList}>
                         {quotes.map((quote, index) => (
                             <li key={index} className={styles.quoteItem}>
