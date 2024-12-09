@@ -52,6 +52,11 @@ const certifications = [
     { title: 'IEUK 2024: Technology', issuer: 'Bright Network', date: 'Issued Jun 2024', link: 'https://www.brightnetwork.co.uk/certificates/ieuk-2024-technology_yubfakdv69wuah/' },
 ];
 
+const quotes = [
+    { text: "The people who are crazy enough to think they can change the world are the ones who do.", author: "Rob Siltanen" },
+    { text: "Pursue your dreams and see the opportunities in life's setbacks.", author: "Steve Jobs" },
+];
+
 function About() {
     return (
         <section id="about" className={styles.about}>
@@ -100,6 +105,20 @@ function About() {
                     ))}
                 </div>
 
+                <div className={styles.quotesContainer}>
+                    <h2 className={styles.containerTitle}>Favorite Quotes</h2>
+                    <ul className={styles.quoteList}>
+                        {quotes.map((quote, index) => (
+                            <li key={index} className={styles.quoteItem}>
+                                <blockquote>
+                                    <p className={`${styles.quoteText} ${styles.text}`}>&quot;{quote.text}&quot;</p>
+                                    <footer className={styles.quoteAuthor}>- {quote.author}</footer>
+                                </blockquote>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
                 <div className={styles.certificationsContainer}>
                     <h2 className={styles.containerTitle}>Certifications</h2>
                     <ul className={styles.certificationList}>
@@ -116,15 +135,6 @@ function About() {
                             </li>
                         ))}
                     </ul>
-                </div>
-
-                <div className={styles.resumeContainer}>
-                    <h2 className={styles.containerTitle}>Resume</h2>
-                    <p className={styles.text}>My resume can be downloaded below, where you’ll find details on my
-                        education, work experience, and projects.</p>
-                    <a href="/path/to/cv.pdf" className={styles.button} download>
-                        Download Resume
-                    </a>
                 </div>
             </div>
         </section>
