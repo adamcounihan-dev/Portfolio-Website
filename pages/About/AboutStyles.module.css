@@ -7,7 +7,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
-    height: auto;
     min-height: calc(100dvh - 70px);
     width: 100vw;
     color: var(--text-color);
@@ -23,51 +22,227 @@
     text-decoration: underline;
 }
 
-.aboutContent {
-    max-width: 1000px;
-    margin: 20px;
+.contentContainer {
+    max-width: 1200px;
+    width: 100%;
     padding: 20px;
+    display: grid;
+    gap: 30px;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "profile bio"
+        "skills certifications"
+        "skills quotes"
+        "skills ."
+        "skills .";
+}
+
+.profileContainer {
     background-color: var(--container-bg-color);
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-    font-size: 1.2rem;
-    line-height: 1.6;
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    grid-area: profile;
+}
+
+.profileImage {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
 }
 
 .text {
     flex: 2;
     font-size: 1.2rem;
     color: var(--text-color);
+    margin: 1rem;
 }
 
-.text strong {
-    color: var(--accent-color);
-    font-weight: bold;
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 35px;
+    overflow-x: visible;
 }
 
-.text em {
-    font-style: italic;
-    color: #eee;
+.button {
+    padding: 8px 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 240px;
 }
 
-.profileContainer {
-    flex-shrink: 0;
-    width: 300px;
-    height: 300px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    background: var(--container-bg-color);
+.button:hover {
+    transform: scale(1.05);
 }
 
-.profileImage {
+.button:active {
+    transform: scale(1);
+}
+
+.bioContainer {
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+    grid-area: bio;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    grid-area: skills;
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.skillCategoryTitle {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.skillList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.skillItem {
+    background-color: rgba(204, 204, 204, 0.09);
+    color: white;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(205, 205, 205, 0.16);
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skillLogo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.containerTitle {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.certificationsContainer {
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+    grid-area: certifications;
+}
+
+.certificationList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.certificationItem {
+    background-color: rgba(204, 204, 204, 0.09);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: left;
+    border: 1px solid rgba(205, 205, 205, 0.16);
+}
+
+.certificationLink {
+    color: #4DD0FF;
+    text-decoration: none;
+}
+
+.certificationLink:hover {
+    text-decoration: underline;
+}
+
+.quotesContainer {
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    grid-area: quotes;
+    border: 1px solid #ccc;
+}
+
+.quoteList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.quoteItem {
+    background-color: rgba(204, 204, 204, 0.09);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+    border: 1px solid rgba(205, 205, 205, 0.16);
+}
+
+.quoteText {
+    font-style: italic;
+}
+
+.quoteAuthor {
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 915px) {
+    .contentContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "profile"
+            "bio"
+            "skills"
+            "certifications"
+            "quotes";
+    }
 }
 
 @media (max-width: 768px) {
@@ -75,10 +250,11 @@
         font-size: 2.5rem;
     }
 
-    .aboutContent {
-        flex-direction: column;
-        align-items: center;
-        font-size: 1rem;
-        padding: 15px;
+    .profileContainer, .bioContainer {
+        height: auto;
+    }
+
+    .skillsContainer {
+        grid-template-columns: 1fr;
     }
 }

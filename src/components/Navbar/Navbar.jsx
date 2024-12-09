@@ -58,15 +58,6 @@ function Navbar() {
                             Projects
                         </Link>
                     </li>
-                    <li className={styles.navItem}>
-                        <Link
-                            to="/skills"
-                            className={styles.navLink}
-                            onClick={toggleMenu}
-                        >
-                            Skills
-                        </Link>
-                    </li>
                 </ul>
                 <button
                     className={styles.hamburger}
@@ -105,15 +96,6 @@ function Navbar() {
                             onClick={toggleMenu}
                         >
                             Projects
-                        </Link>
-                    </li>
-                    <li className={styles.mobileNavItem}>
-                        <Link
-                            to="/skills"
-                            className={styles.navLink}
-                            onClick={toggleMenu}
-                        >
-                            Skills
                         </Link>
                     </li>
                 </ul>
