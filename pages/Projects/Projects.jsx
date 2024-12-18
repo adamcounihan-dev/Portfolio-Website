@@ -5,7 +5,7 @@ function getProjects() {
         {
             title: 'React Portfolio Website',
             description: 'This site you are currently exploring is built with React to showcase my skills in web development.',
-            link: 'https://github.com/adamlcounihan/Revamplify',
+            link: 'https://github.com/adamlcounihan/Portfolio-Website',
             languages: ['HTML', 'CSS', 'JavaScript', 'React']
         },
         {
