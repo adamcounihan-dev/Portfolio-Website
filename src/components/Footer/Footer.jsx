@@ -7,8 +7,7 @@ function Footer() {
     return (
         <section id="footer" className={styles.container}>
             <p>
-                &copy; {creationYear}{currentYear > creationYear ? `–${currentYear}` : ''} Adam Counihan <br />
-                All Rights Reserved
+                &copy; {creationYear}{currentYear > creationYear ? `–${currentYear}` : ''} Adam Counihan - All Rights Reserved
             </p>
         </section>
     );
