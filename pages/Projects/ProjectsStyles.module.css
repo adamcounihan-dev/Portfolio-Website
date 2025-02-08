@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    background: url("/src/assets/background.png") no-repeat top center fixed;
+    background: url("/src/assets/background.webp") no-repeat top center fixed;
     background-size: cover;
     padding-top: 50px;
     position: relative;
