@@ -20,11 +20,11 @@ function Home() {
                     </Link>
                 </div>
                 <div className={styles.socialMedia}>
-                    <a href="https://github.com/adamlcounihan/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/adamcounihan-dev/" target="_blank" rel="noopener noreferrer">
                         <img className={styles.icon} src={githubIcon} alt="Github icon" />
                         <span className={styles.label}>GitHub</span>
                     </a>
-                    <a href="https://linkedin.com/in/adamlcounihan/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/adamcounihan-dev/" target="_blank" rel="noopener noreferrer">
                         <img className={styles.icon} src={linkedinIcon} alt="Linkedin icon" />
                         <span className={styles.label}>LinkedIn</span>
                     </a>
