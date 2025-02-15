@@ -27,7 +27,9 @@ function Navbar() {
     return (
         <nav id="navbar" className={styles.navbar}>
             <div className={styles.navLeft}>
-                <p className={styles.logo}>Adam Counihan</p>
+                <Link to="/" className={styles.logo}>
+                    Adam Counihan
+                </Link>
             </div>
             <div className={styles.navRight}>
                 <ul className={`${styles.navList} ${isMobile && isMenuOpen ? styles.menuOpen : ''}`}>
