@@ -19,11 +19,23 @@
 html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/src/assets/background.webp") no-repeat center center fixed;
-    background-size: cover;
     color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/assets/background.webp") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
 
 #root {
     min-height: 100vh;
