@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #1e3a33;
-    --text-color: #f5f5f5;
-    --accent-color: #045b14;
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #04a73a;
+    --button-color: #ffffff;
     --link-color: #00c2ff;
-    --container-bg-color: #232323;
-    --navbar-color: #2A2D2CFF;
+    --navbar-color: #232323;
     --sidebar-color: #165b45;
     --footer-color: #000000;
 }
@@ -18,42 +18,52 @@
 
 html, body {
     height: 100%;
-}
-
-body {
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
 }
 
-h1,h2,h3, p{
+body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/assets/background.webp") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
-h1{
-    font-size: 4rem;
+h1 {
+    font-size: 3rem;
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-p{
-    font-size: 2rem;
-    font-weight: 320;
-}
-
-.sectionTitle{
-    margin-bottom: 30px;
+p {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
-    h1{
+    h1 {
         font-size: 2rem;
     }
 
-    p{
+    p {
         font-size: 1rem;
     }
 }
