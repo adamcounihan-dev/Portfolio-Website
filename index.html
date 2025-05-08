@@ -26,6 +26,15 @@
   <link rel="preload" href="/src/assets/background.webp" as="image">
   <link rel="preload" href="/src/assets/hero-img.webp" as="image">
   <title>Adam Counihan Portfolio</title>
+
+  <script>
+    if (location.hostname.endsWith("netlify.app")) {
+      const meta = document.createElement("meta");
+      meta.name = "robots";
+      meta.content = "noindex";
+      document.head.appendChild(meta);
+    }
+  </script>
 </head>
 <body>
 <div id="root"></div>

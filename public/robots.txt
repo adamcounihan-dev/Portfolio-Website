@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adamlcounihan.netlify.app/sitemap.xml
+Sitemap: https://adamcounihan.dev/sitemap.xml
