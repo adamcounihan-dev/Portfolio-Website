@@ -1,0 +1,41 @@
+.baseButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--button-color);
+    cursor: pointer;
+    color: var(--text-body);
+}
+
+.baseButton:hover {
+    transform: scale(1.08);
+}
+
+.primaryButton {
+    composes: baseButton;
+    background: var(--button-color);
+}
+
+.secondaryButton {
+    composes: baseButton;
+    background: transparent;
+}
+
+.smallButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.mediumButton {
+    padding: 14px 24px;
+    font-size: 1rem;
+}
+
+.largeButton {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
