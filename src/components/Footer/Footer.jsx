@@ -1,15 +1,80 @@
+import { Link } from 'react-router-dom';
 import styles from './FooterStyles.module.css';
+import githubIcon from '/src/assets/github.svg';
+import linkedinIcon from '/src/assets/linkedin.svg';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
     const creationYear = 2024;
 
     return (
-        <section id="footer" className={styles.container}>
-            <p>
-                &copy; {creationYear}{currentYear > creationYear ? `–${currentYear}` : ''} Adam Counihan - All Rights Reserved
-            </p>
-        </section>
+        <footer id="footer" className={styles.footer} role="contentinfo">
+            <div className={styles.container}>
+                <div className={styles.footerContent}>
+                    {/* Footer Links */}
+                    <div className={styles.footerSection}>
+                        <h4 className={styles.footerTitle}>Quick Links</h4>
+                        <nav className={styles.footerNav} aria-label="Footer navigation">
+                            <Link to="/" className={styles.footerLink}>Home</Link>
+                            <Link to="/about" className={styles.footerLink}>About</Link>
+                            <Link to="/projects" className={styles.footerLink}>Projects</Link>
+                            <Link to="/contact" className={styles.footerLink}>Contact</Link>
+                        </nav>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className={styles.footerSection}>
+                        <h4 className={styles.footerTitle}>Connect</h4>
+                        <div className={styles.socialLinks}>
+                            <a
+                                href="https://github.com/adamcounihan-dev/"
+                                className={styles.socialLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit my GitHub profile"
+                            >
+                                <img src={githubIcon} alt="" className={styles.socialIcon} />
+                                GitHub
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/adamcounihan-dev/"
+                                className={styles.socialLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit my LinkedIn profile"
+                            >
+                                <img src={linkedinIcon} alt="" className={styles.socialIcon} />
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className={styles.footerSection}>
+                        <h4 className={styles.footerTitle}>Get in Touch</h4>
+                        <div className={styles.contactInfo}>
+                            <a
+                                href="/resume.pdf"
+                                className={styles.footerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Copyright */}
+                <div className={styles.footerBottom}>
+                    <div className={styles.copyright}>
+                        <p>
+                            &copy; {creationYear}–{currentYear} Adam Counihan. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 }
 
