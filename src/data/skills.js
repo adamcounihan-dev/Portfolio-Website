@@ -17,3 +17,22 @@ export const primarySkills = [
     { name: 'HTML/CSS', logo: htmlLogo },
     { name: 'PostgreSQL', logo: postgresLogo }
 ];
+
+export const skillCategories = [
+    {
+        title: 'Frontend',
+        skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Vite']
+    },
+    {
+        title: 'Backend',
+        skills: ['Java', 'Python', 'PHP', 'C', 'C#', 'CodeIgniter', 'Node.js', 'Express.js', 'Haskell']
+    },
+    {
+        title: 'Database Management',
+        skills: ['MySQL', 'PostgreSQL']
+    },
+    {
+        title: 'Tools & Platforms',
+        skills: ['Unix', 'Figma', 'Docker']
+    }
+];

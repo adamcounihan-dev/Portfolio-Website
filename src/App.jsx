@@ -8,12 +8,26 @@ import Footer from "./components/Footer/Footer.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 
 function ScrollToTop() {
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-    }, [pathname]);
+        // If there's a hash, scroll to that element
+        if (hash) {
+            setTimeout(() => {
+                const element = document.getElementById(hash.replace('#', ''));
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        } else {
+            // No hash, scroll to top
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }
+    }, [pathname, hash]);
 
     useEffect(() => {
         const handleLinkClick = (event) => {
@@ -22,9 +36,25 @@ function ScrollToTop() {
                 const href = link.getAttribute('href');
                 const currentPath = window.location.pathname;
 
+                // Check if it's a same-page link without hash
                 if (href === currentPath) {
                     document.documentElement.scrollTop = 0;
                     document.body.scrollTop = 0;
+                }
+
+                // Handle hash links
+                if (href.includes('#')) {
+                    const [linkPath, hash] = href.split('#');
+                    if (linkPath === currentPath || linkPath === '') {
+                        event.preventDefault();
+                        const element = document.getElementById(hash);
+                        if (element) {
+                            element.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
                 }
             }
         };

@@ -1,252 +1,374 @@
 .about {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 80px 20px;
-    color: var(--text-color);
-    flex-direction: column;
+    color: var(--text-body);
 }
 
 .container {
-    padding: 60px;
-    border-radius: 16px;
-    width: 90%;
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    margin: 0 auto;
 }
 
-.title {
+/* =========================== */
+/* Page Title */
+/* =========================== */
+.pageTitle {
     font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-body);
+    margin-bottom: 60px;
+    line-height: 1.1;
     text-align: center;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
-    cursor: default;
 }
 
-.subTitle {
+.sectionTitle {
     font-size: 2.2rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 8px;
-    cursor: default;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: var(--text-body);
 }
 
-.innerGlass {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* =========================== */
+/* About Intro Section */
+/* =========================== */
+.aboutSection {
+    margin-bottom: 80px;
 }
 
-.profileContainer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+.aboutContent {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.profileContent {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.profileImage {
-    flex: 0 0 35%;
-    width: 100%;
-    max-width: 350px;
-    border-radius: 16px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-}
-
-.profileText {
-    flex: 1;
-    font-size: 1.4rem;
-    line-height: 1.8;
+.aboutParagraph {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
     text-align: left;
 }
 
-.skillsContainer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+.aboutParagraph:first-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.aboutParagraph strong {
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+.ctaSection {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--card-border);
+}
+
+.ctaText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    color: var(--text-body);
+    font-weight: 500;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================== */
+/* Tech Stack Section */
+/* =========================== */
+.techSection {
+    margin-bottom: 80px;
+}
+
+.skillsCategoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 }
 
 .skillCategory {
-    margin-bottom: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
 }
 
-.skillCategoryTitle {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.categoryTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 16px;
 }
 
-.skillList {
-    list-style: none;
-    padding: 0;
+.skillsList {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 8px;
+    justify-content: center;
 }
 
 .skillItem {
-    background: rgb(0 0 0 / 75%);
-    border-radius: 8px;
-    padding: 12px;
+    background: var(--background);
+    border: 1px solid var(--card-border);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-body);
+}
+
+/* =========================== */
+/* Combined Personal & Quotes Section */
+/* =========================== */
+.personalSection {
+    margin-bottom: 80px;
+}
+
+.personalContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.personalCards {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 120px;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.skillLogo {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
-
-.quotesContainer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
+.personalCard {
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.quoteList {
-    list-style: none;
-    padding: 0;
+.personalIcon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
-.quoteItem {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.personalText {
+    flex: 1;
+}
+
+.personalTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 12px;
+}
+
+.personalDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* =========================== */
+/* Quotes Section (embedded) */
+/* =========================== */
+.quotesContainer {
+    position: sticky;
+    top: 100px;
+}
+
+.quotesTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-body);
+}
+
+.quotesGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.quoteCard {
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
 }
 
 .quoteText {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
     font-style: italic;
 }
 
 .quoteAuthor {
-    font-size: 1.2rem;
-    text-align: right;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+/* =========================== */
+/* Certifications Section */
+/* =========================== */
+.certificationsSection {
+    margin-bottom: 80px;
 }
 
 .certificationsContainer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.certificationsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.certificationCard {
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 350px;
+    max-width: 450px;
+    min-width: 320px;
 }
 
-.certificationList {
-    list-style: none;
-    padding: 0;
+.certificationContent {
+    flex: 1;
 }
 
-.certificationItem {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.certificationTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 8px;
 }
 
-.certificationLink {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: bold;
+.certificationIssuer {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
 }
 
-.certificationLink:hover {
-    text-decoration: underline;
+.certificationDate {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    font-style: italic;
+}
+
+.certificationActions {
+    flex-shrink: 0;
+}
+
+/* =========================== */
+/* Responsive Design */
+/* =========================== */
+@media (max-width: 1024px) {
+    .pageTitle {
+        font-size: 3rem;
+    }
+
+    .skillsCategoriesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .personalContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .quotesContainer {
+        position: static;
+    }
+
+    .quotesGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .about{
-        min-height: calc(100svh - 40px);
-    }
-
-    .container{
-        padding: 10px;
-        width: auto;
-    }
-
-    .title {
+    .pageTitle {
         font-size: 2.5rem;
-        margin-bottom: 15px;
+        margin-bottom: 40px;
     }
 
-    .subTitle {
+    .sectionTitle,
+    .quotesTitle {
         font-size: 1.8rem;
     }
 
-    .profileContainer {
-        padding: 20px;
-        border-radius: 12px;
+    .skillsCategoriesGrid {
+        grid-template-columns: 1fr;
     }
 
-    .profileContent {
+    .personalCard {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .profileImage {
-        max-width: 300px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .profileText {
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-
-    .skillsContainer {
-        padding: 20px;
-    }
-
-    .skillCategoryTitle {
-        font-size: 1.6rem;
-    }
-
-    .skillList {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .skillItem {
-        min-width: 100%;
         text-align: center;
+        align-items: center;
     }
 
-    .quoteList {
-        display: flex;
+    .personalIcon {
+        margin-top: 0;
+    }
+
+    .personalDescription {
+        text-align: left;
+    }
+
+    .quotesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificationCard {
+        flex: 1 1 100%;
+        max-width: none;
         flex-direction: column;
-        gap: 15px;
+        text-align: center;
+        gap: 16px;
     }
 
-    .quoteItem {
-        padding: 15px;
+    .certificationsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageTitle {
+        font-size: 2rem;
     }
 
-    .certificationItem {
-        padding: 15px;
+    .sectionTitle,
+    .quotesTitle {
+        font-size: 1.5rem;
+    }
+
+    .personalCard,
+    .quoteCard,
+    .certificationCard {
+        padding: 20px;
+    }
+
+    .certificationsSection {
+        padding: 24px;
     }
 }
