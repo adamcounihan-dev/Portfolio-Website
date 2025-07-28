@@ -1,86 +1,81 @@
 .notFound {
+    width: 100%;
+    padding: 80px 20px;
+    color: var(--text-body);
+    min-height: 80vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 40px);
-    width: 100vw;
-    padding: 50px 20px;
-    color: var(--text-color);
 }
 
-.notFoundContainer {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.38);
-    width: 700px;
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.innerGlass {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.errorNumber {
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--text-accent);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.pageTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-body);
+    margin-bottom: 24px;
+    line-height: 1.1;
     text-align: center;
 }
 
-.title {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-}
-
-.text {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    margin-bottom: 15px;
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    margin-bottom: 32px;
     text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.linkList {
-    list-style: none;
-    padding: 0;
+.buttonContainer {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.linkItem {
-    text-align: center;
-}
-
-.link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--link-color);
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.link:hover {
-    text-decoration: underline;
-    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 2.5rem;
+    .errorNumber {
+        font-size: 6rem;
+        margin-bottom: 12px;
     }
 
-    .text {
-        font-size: 1.2rem;
+    .pageTitle {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
     }
 
-    .link {
+    .description {
         font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .errorNumber {
+        font-size: 4rem;
     }
 
-    .notFoundContainer {
-        padding: 20px;
-        width: 90%;
+    .pageTitle {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+    }
+
+    .description {
+        font-size: 0.95rem;
     }
 }
