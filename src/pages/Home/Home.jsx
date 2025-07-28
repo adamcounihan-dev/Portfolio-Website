@@ -50,11 +50,9 @@ const Home = () => {
                                 <Button
                                     variant="secondary"
                                     size="large"
-                                    href="/resume.pdf"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to="/projects"
                                 >
-                                    Download CV
+                                    See My Work
                                 </Button>
                             </div>
 

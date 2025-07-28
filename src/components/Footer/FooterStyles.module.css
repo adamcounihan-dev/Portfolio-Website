@@ -77,7 +77,7 @@
     height: 16px;
 }
 
-.contactInfo {
+.resourceInfo {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;

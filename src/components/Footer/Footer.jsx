@@ -49,20 +49,20 @@ function Footer() {
                         </div>
                     </div>
 
-                    {/* Contact Info */}
+                    {/* Site Resources */}
                     <div className={styles.footerSection}>
-                        <h4 className={styles.footerTitle}>Get in Touch</h4>
-                        <div className={styles.contactInfo}>
+                        <h4 className={styles.footerTitle}>Resources</h4>
+                        <div className={styles.resourceInfo}>
                             <a
-                                href="/resume.pdf"
-                                className={styles.footerLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            href="/sitemap.xml"
+                            className={styles.footerLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             >
-                                Download CV
-                            </a>
-                        </div>
+                            Sitemap
+                        </a>
                     </div>
+                </div>
                 </div>
 
                 {/* Copyright */}
