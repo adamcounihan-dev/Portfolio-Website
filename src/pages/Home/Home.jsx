@@ -68,7 +68,7 @@ const Home = () => {
                                     GitHub
                                 </a>
                                 <a
-                                    href="https://linkedin.com/in/adamcounihan-dev/"
+                                    href="https://www.linkedin.com/in/adamcounihan-dev/"
                                     className={styles.socialLink}
                                     target="_blank"
                                     rel="noopener noreferrer"

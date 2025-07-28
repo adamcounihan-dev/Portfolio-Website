@@ -13,7 +13,7 @@ const Contact = () => {
         {
             platform: 'LinkedIn',
             icon: linkedinIcon,
-            url: 'https://linkedin.com/in/adamcounihan-dev/',
+            url: 'https://www.linkedin.com/in/adamcounihan-dev/',
             username: 'adamcounihan-dev'
         }
     ];
