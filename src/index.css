@@ -1,41 +1,47 @@
 :root {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --accent-color: #04a73a;
-    --button-color: #ffffff;
-    --link-color: #00c2ff;
-    --navbar-color: #232323;
-    --sidebar-color: #165b45;
-    --footer-color: #000000;
+    /* Layout & Backgrounds */
+    --background: #1d1e20;       /* Main page background */
+    --navbar: #232323;           /* Top navigation bar */
+    --sidebar: #1a1b1d;          /* Side navigation/menu */
+    --footer: #000000;           /* Bottom footer area */
+
+    /* Typography */
+    --text-accent: #08d54c;      /* Headings, key emphasis words, highlights */
+    --text-body: #ffffff;        /* Primary content, paragraphs, main text */
+    --text-subtle: #bcbcbc;      /* Supporting info, timestamps */
+
+    /* Buttons */
+    --button-color: #03875D;     /* Button backgrounds/borders */
+
+    /* Cards */
+    --card-background: #212224;  /* Card/section backgrounds */
+    --card-border: #38383a;      /* Card borders, dividers */
+
+    /* Icons */
+    --icon-border: #c2c2c2;      /* Icon container borders */
+
+    /* Links */
+    --link: #00c2ff;            /* All internal and external links */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+}
+
+[id] {
+    scroll-margin-top: 4.5rem;
 }
 
 html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
+    color: var(--text-body);
     overflow-x: hidden;
     position: relative;
+    background: var(--background);
 }
-
-body::before {
-    content: "";
-    position: fixed;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/src/assets/background.webp") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-}
-
 
 #root {
     min-height: 100vh;
@@ -65,5 +71,9 @@ p {
 
     p {
         font-size: 1rem;
+    }
+
+    [id] {
+        scroll-margin-top: 4rem;
     }
 }

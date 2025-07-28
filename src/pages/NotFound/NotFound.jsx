@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Button from '../../components/Button/Button.jsx';
 import styles from './NotFoundStyles.module.css';
 
 function NotFound() {
@@ -11,27 +11,24 @@ function NotFound() {
         };
     }, []);
 
-
     return (
         <section id="not-found" className={styles.notFound}>
-            <div className={styles.notFoundContainer}>
-                <div className={styles.innerGlass}>
-                    <h1 className={styles.title}>Error Code: 404</h1>
-                    <p className={styles.text}>
-                        Sorry, the page you are looking for does not exist. It might have been moved or deleted.
-                    </p>
-                    <p className={styles.text}>Here are some helpful links instead:</p>
-                    <ul className={styles.linkList}>
-                        <li className={styles.linkItem}>
-                            <Link to="/" className={styles.link}>Home</Link>
-                        </li>
-                        <li className={styles.linkItem}>
-                            <Link to="/about" className={styles.link}>About</Link>
-                        </li>
-                        <li className={styles.linkItem}>
-                            <Link to="/projects" className={styles.link}>Projects</Link>
-                        </li>
-                    </ul>
+            <div className={styles.container}>
+                <div className={styles.errorNumber}>404</div>
+                <h1 className={styles.pageTitle}>Page Not Found</h1>
+
+                <p className={styles.description}>
+                    Sorry, the page you are looking for does not exist. The address might have been moved, deleted, or is no longer available.
+                </p>
+
+                <div className={styles.buttonContainer}>
+                    <Button
+                        variant="primary"
+                        size="medium"
+                        to="/"
+                    >
+                        Go to Homepage
+                    </Button>
                 </div>
             </div>
         </section>

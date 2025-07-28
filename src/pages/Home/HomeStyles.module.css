@@ -1,156 +1,542 @@
 .home {
     width: 100%;
-    height: calc(100vh - 40px);
-    display: flex;
-    justify-content: center;
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: var(--text-body);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* =========================== */
+/* Hero Section */
+/* =========================== */
+.heroSection {
+    margin-bottom: 80px;
+}
+
+.heroContent {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
     align-items: center;
-    padding: 40px 20px;
-    color: var(--text-color);
+    min-height: 600px;
 }
 
-.info {
-    position: relative;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 12px;
-    width: 700px;
-    text-align: center;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+.heroText {
+    max-width: 100%;
 }
 
-.innerGlass {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.name {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    line-height: 1.1;
 }
-
 
 .title {
-    font-size: 3rem;
-    color: var(--text-color);
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    text-decoration: var(--accent-color) underline;
-    cursor: default;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 24px;
+    line-height: 1.3;
 }
 
-.description {
+.heroDescription {
     font-size: 1.2rem;
-    color: var(--text-color);
-    margin: 20px 0;
-    line-height: 1.6;
-    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.heroDescription strong {
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+.achievements {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.achievementCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 16px 20px;
+    border-radius: 12px;
+}
+
+.achievementIcon {
+    font-size: 1.5rem;
+    border: 1px solid var(--icon-border);
+    padding: 8px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievementContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievementValue {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-accent);
+    line-height: 1.2;
+}
+
+.achievementLabel {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    font-weight: 500;
+}
+
+.achievementSubtitle {
+    font-size: 0.75rem;
+    color: var(--text-subtle);
 }
 
 .ctaButtons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 5px;
-    overflow: hidden;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
 }
 
-.button {
-    padding: 12px 0 12px 0;
-    border-radius: 8px;
+.socialLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--link);
     text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: 500;
     transition: all 0.3s ease;
-    width: 150px;
-    text-align: center;
-    background: var(--button-color);
-    color: #000000;
-    border: 1px rgba(255, 255, 255, 0.38) solid;
+    padding: 8px 12px;
+    border-radius: 6px;
 }
 
-.button:hover {
-    background: #9c9c9c;
-    transform: scale(1.1);
+.socialLink:hover {
+    text-decoration: underline;
 }
 
-.button:focus {
-    outline: none;
+.socialIcon {
+    width: 20px;
+    height: 20px;
 }
 
-.socialMedia {
+/* =========================== */
+/* Hero Image */
+/* =========================== */
+.heroImage {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    overflow: hidden;
+    align-items: center;
 }
 
-.socialMedia a {
+.imageContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profileImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 3px solid var(--text-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.imageOverlay {
+    margin-top: 16px;
+}
+
+.universityBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--icon-border);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* =========================== */
+/* Section Styles */
+/* =========================== */
+.skillsSection,
+.projectsSection,
+.experienceSection {
+    margin-bottom: 60px;
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* =========================== */
+/* Skills Section */
+/* =========================== */
+.skillsSection {
+    text-align: center;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+}
+
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 20px 16px;
+    border-radius: 12px;
+}
+
+.skillLogo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.skillName {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.skillsFooter {
+    text-align: center;
+}
+
+.skillsLink {
+    display: inline-flex;
+    align-items: center;
+    color: var(--link);
     text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-.socialMedia a:hover {
-    transform: scale(1.1);
+.skillsLink:hover {
+    text-decoration: underline;
 }
 
-.icon {
-    width: 50px;
-    transition: all 0.3s ease;
+/* =========================== */
+/* Projects Section */
+/* =========================== */
+.projectsSection {
+    text-align: center;
 }
 
-.label {
-    margin-top: 8px;
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto 24px auto;
+}
+
+.projectCard {
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.projectName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin: 0;
+}
+
+.projectDate {
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    font-style: italic;
+}
+
+.projectDescription {
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.projectTech {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.techLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-accent);
+}
+
+.techList {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+}
+
+.projectsFooter {
+    text-align: center;
+}
+
+.projectsLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.projectsLink:hover {
+    text-decoration: underline;
+}
+
+.projectButtons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* =========================== */
+/* Experience Section */
+/* =========================== */
+.experienceSection {
+    text-align: center;
+}
+
+.experienceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experienceCard {
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+}
+
+.experienceHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.experienceIcon {
+    font-size: 1.5rem;
+    border: 1px solid var(--icon-border);
+    padding: 8px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experienceTitle {
+    font-size: 1.3rem;
+    color: var(--text-accent);
+    margin: 0 0 4px 0;
+}
+
+.experienceCompany {
     font-size: 1rem;
-    color: var(--text-color);
     font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    margin: 0;
+}
+
+.experienceRole {
+    font-size: 1rem;
+    color: var(--text-subtle);
+    margin-bottom: 5px;
+}
+
+.experienceDate {
+    font-size: 0.9rem;
+    color: var(--text-accent);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.experienceDescription {
+    line-height: 1.6;
+}
+
+/* =========================== */
+/* Contact Section */
+/* =========================== */
+.contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 40px 32px;
+}
+
+.contactTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.contactDescription {
+    font-size: 1.1rem;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================== */
+/* Responsive Design */
+/* =========================== */
+@media (max-width: 1024px) {
+    .heroContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .profileImage {
+        width: 250px;
+        height: 250px;
+    }
+
+    .projectsGrid,
+    .experienceGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    :root:has(.home) {
-        overflow: hidden;
-        height: 100vh;
-    }
-
-    .home {
-        flex-direction: column;
-        align-items: center;
-        height: calc(100svh - 40px);
-        padding: 0;
-    }
-
-    .info {
-        margin-top: 60px;
-        width: 90%;
-        padding: 20px;
+    .name {
+        font-size: 3rem;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
-    .description {
-        font-size: 1rem;
+    .heroDescription {
+        font-size: 1.1rem;
+        max-width: 100%;
     }
 
-    .socialMedia {
-        gap: 30px;
+    .achievements {
+        justify-content: center;
     }
 
-    .ctaButtons{
-        padding: 0;
+    .ctaButtons {
+        justify-content: center;
     }
 
-    .icon {
-        width: 40px;
+    .skillsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 16px;
     }
 
-    .label {
-        font-size: 0.8rem;
+    .projectsGrid,
+    .experienceGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectCard,
+    .experienceCard {
+        padding: 20px;
+    }
+
+    .contactSection {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .profileImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    .achievementCard {
+        padding: 12px 16px;
+        width: 60%;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .contactTitle {
+        font-size: 1.6rem;
     }
 }

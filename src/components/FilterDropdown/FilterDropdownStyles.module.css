@@ -1,0 +1,140 @@
+.filterDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownToggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--card-border);
+    background: var(--card-background);
+    color: var(--text-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    justify-content: space-between;
+}
+
+.dropdownToggle:hover {
+    border-color: var(--button-color);
+    transform: translateY(-1px);
+}
+
+.dropdownToggle.open {
+    border-color: var(--button-color);
+    border-radius: 8px 8px 0 0;
+}
+
+.dropdownText {
+    flex: 1;
+    text-align: left;
+}
+
+.dropdownIcon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.dropdownIcon.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-background);
+    border: 2px solid var(--button-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdownItem {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    display: block;
+}
+
+.dropdownItem:hover {
+    background: var(--button-color);
+    color: var(--text-body);
+}
+
+.dropdownItem.active {
+    background: var(--button-color);
+    color: var(--text-body);
+    font-weight: 600;
+}
+
+.dropdownItem:focus {
+    outline: 2px solid var(--button-color);
+    outline-offset: -2px;
+}
+
+/* Custom scrollbar for dropdown menu */
+.dropdownMenu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+    background: var(--card-background);
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 3px;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb:hover {
+    background: var(--button-color);
+}
+
+/* =========================== */
+/* Responsive Design */
+/* =========================== */
+@media (max-width: 768px) {
+    .dropdownToggle {
+        min-width: 160px;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .dropdownItem {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdownToggle {
+        min-width: 140px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .dropdownItem {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,55 +1,95 @@
+import { useState, useMemo } from 'react';
 import styles from './ProjectsStyles.module.css';
-import { Link } from 'react-router-dom';
-
-const projects = [
-    {
-        title: 'React Portfolio Website',
-        description: 'This site you are currently exploring is built with React to showcase my skills in web development.',
-        link: 'https://github.com/adamlcounihan/Portfolio-Website',
-        languages: ['HTML', 'CSS', 'JavaScript', 'React']
-    },
-    {
-        title: 'Revamplify',
-        description: 'A redesign of the Spotify Web Player.',
-        link: 'https://github.com/adamlcounihan/Revamplify',
-        languages: ['HTML', 'CSS', 'JavaScript', 'React', 'Express']
-    },
-    {
-        title: 'The Land of Nasrin',
-        description: 'A Unity platformer game that I created for my A-Level Computer Science coursework.',
-        link: 'https://github.com/adamlcounihan/TheLandOfNasrin',
-        languages: ['C#', 'Unity']
-    },
-    {
-        title: 'Slot Machine',
-        description: 'A text-based slot machine written in C.',
-        link: 'https://github.com/adamlcounihan/SlotMachine',
-        languages: ['C']
-    }
-];
+import Button from '../../components/Button/Button.jsx';
+import FilterDropdown from '../../components/FilterDropdown/FilterDropdown.jsx';
+import { allProjects } from '../../data';
 
 const Projects = () => {
-    return (
-        <section id="projects" className={styles.projects}>
-            <h1 className={styles.title}>Projects</h1>
+    const [activeFilter, setActiveFilter] = useState('All Projects');
 
+    // Extract unique technologies from projects
+    const techOptions = useMemo(() => {
+        const allTech = new Set();
+
+        allProjects.forEach(project => {
+            const techs = project.tech.split(',').map(tech => tech.trim());
+            techs.forEach(tech => allTech.add(tech));
+        });
+
+        const sortedTech = Array.from(allTech).sort();
+        return ['All Projects', ...sortedTech];
+    }, []);
+
+    // Filter projects based on active filter
+    const filteredProjects = useMemo(() => {
+        if (activeFilter === 'All Projects') return allProjects;
+
+        return allProjects.filter(project => {
+            const techArray = project.tech.split(',').map(tech => tech.trim());
+            return techArray.includes(activeFilter);
+        });
+    }, [activeFilter]);
+
+    return (
+        <section id="projects" className={styles.projects} role="main">
             <div className={styles.container}>
-                {projects.map((project, index) => (
-                    <div key={index} className={styles.projectContainer}>
-                        <div className={styles.innerGlass}>
-                            <h2 className={styles.projectTitle}>{project.title}</h2>
-                            <p className={styles.projectDescription}>{project.description}</p>
-                            <Link to={project.link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                                View Project Code
-                            </Link>
-                            <ul className={styles.languagesList}>
-                                {project.languages.map((language, langIndex) => (
-                                    <li key={langIndex} className={styles.languageItem}>{language}</li>
-                                ))}
-                            </ul>
+                <h1 className={styles.pageTitle}>Projects</h1>
+
+                <div className={styles.filterContainer}>
+                    <FilterDropdown
+                        options={techOptions}
+                        value={activeFilter}
+                        onChange={setActiveFilter}
+                        placeholder="Select Technology"
+                        label="Filter by:"
+                    />
+                </div>
+
+                <div className={styles.projectsList}>
+                    {filteredProjects.length > 0 ? (
+                        filteredProjects.map((project, index) => (
+                            <div key={index} className={styles.projectCard}>
+                                <img
+                                    src={project.image}
+                                    alt={`${project.name} screenshot`}
+                                    className={styles.projectImage}
+                                />
+
+                                <div className={styles.projectContent}>
+                                    <div className={styles.projectHeader}>
+                                        <h2 className={styles.projectTitle}>{project.name}</h2>
+                                        <span className={styles.projectDate}>{project.date}</span>
+                                    </div>
+
+                                    <p className={styles.projectDescription}>{project.description}</p>
+
+                                    <div className={styles.projectFooter}>
+                                        <div className={styles.projectTech}>
+                                            <span className={styles.techLabel}>Tech:</span>
+                                            <span className={styles.techList}>{project.tech}</span>
+                                        </div>
+
+                                        <div className={styles.projectActions}>
+                                            <Button
+                                                variant="primary"
+                                                size="small"
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                View on GitHub
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <div className={styles.noResults}>
+                            <p>No projects found using "{activeFilter}".</p>
                         </div>
-                    </div>
-                ))}
+                    )}
+                </div>
             </div>
         </section>
     );
