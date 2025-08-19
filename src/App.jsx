@@ -1,5 +1,6 @@
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from 'react';
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
@@ -8,69 +9,153 @@ import Contact from "./pages/Contact/Contact.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 
-function ScrollToTop() {
+function ScrollToHash({ maxAttempts }) {
     const { pathname, hash } = useLocation();
 
-    useEffect(() => {
-        // If there's a hash, scroll to that element
-        if (hash) {
-            setTimeout(() => {
-                const element = document.getElementById(hash.replace('#', ''));
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 100);
-        } else {
-            // No hash, scroll to top
+    // Function to scroll to top of page
+    const scrollToTop = () => {
+        const performScroll = () => {
+            // Force instant scroll first
+            window.scrollTo(0, 0);
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
-        }
-    }, [pathname, hash]);
 
-    useEffect(() => {
-        const handleLinkClick = (event) => {
-            const link = event.target.closest('a[href]');
-            if (link) {
-                const href = link.getAttribute('href');
-                const currentPath = window.location.pathname;
-
-                // Check if it's a same-page link without hash
-                if (href === currentPath) {
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
-                }
-
-                // Handle hash links
-                if (href.includes('#')) {
-                    const [linkPath, hash] = href.split('#');
-                    if (linkPath === currentPath || linkPath === '') {
-                        event.preventDefault();
-                        const element = document.getElementById(hash);
-                        if (element) {
-                            element.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    }
-                }
-            }
+            // Then apply smooth scroll
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 50);
         };
 
-        document.addEventListener('click', handleLinkClick);
-        return () => document.removeEventListener('click', handleLinkClick);
-    }, []);
+        performScroll();
+
+        // Additional attempts to ensure scroll works
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 200);
+
+        requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+    };
+
+    // Function to scroll to specific element by ID
+    const scrollToElement = (elementId, cancelled) => {
+        const findScrollContainer = (el) => {
+            let parent = el && el.parentElement;
+            while (parent) {
+                const style = getComputedStyle(parent);
+                if (/(auto|scroll|overlay)/.test(style.overflowY)) return parent;
+                parent = parent.parentElement;
+            }
+            return document.scrollingElement || document.documentElement;
+        };
+
+        const getNavbarHeight = () => {
+            const nav = document.querySelector('[data-navbar], nav, header, .navbar, #navbar');
+            return nav ? Math.ceil(nav.getBoundingClientRect().height) || 0 : 0;
+        };
+
+        let attempts = 0;
+
+        const tryScroll = () => {
+            if (cancelled.current) return;
+            attempts++;
+            const el = document.getElementById(elementId);
+
+            if (!el || el.getBoundingClientRect().height === 0) {
+                if (attempts < maxAttempts) {
+                    requestAnimationFrame(tryScroll);
+                }
+                return;
+            }
+
+            const navbarHeight = getNavbarHeight();
+            const scroller = findScrollContainer(el);
+
+            const elRect = el.getBoundingClientRect();
+            const scrollerRect = (scroller === document.scrollingElement || scroller === document.documentElement)
+                ? { top: 0 }
+                : scroller.getBoundingClientRect();
+
+            const scrollerTop = (scroller === document.scrollingElement || scroller === document.documentElement)
+                ? (window.scrollY || document.documentElement.scrollTop || 0)
+                : scroller.scrollTop || 0;
+
+            const visualOffset = (window.visualViewport && typeof window.visualViewport.offsetTop === "number")
+                ? window.visualViewport.offsetTop
+                : 0;
+
+            const target = Math.max(0, Math.round(elRect.top - scrollerRect.top + scrollerTop - navbarHeight - visualOffset));
+
+            // Perform scroll
+            try {
+                if (scroller === document.scrollingElement || scroller === document.documentElement) {
+                    window.scrollTo({ top: target, behavior: "smooth" });
+                } else {
+                    scroller.scrollTo({ top: target, behavior: "smooth" });
+                }
+            } catch {
+                if (scroller === document.scrollingElement || scroller === document.documentElement) {
+                    window.scrollTo(0, target);
+                } else {
+                    scroller.scrollTop = target;
+                }
+            }
+
+            setTimeout(() => {
+                const current = (scroller === document.scrollingElement || scroller === document.documentElement)
+                    ? (window.scrollY || document.documentElement.scrollTop || 0)
+                    : scroller.scrollTop || 0;
+
+                if (!cancelled.current && Math.abs(current - target) > 5 && attempts < maxAttempts) {
+                    requestAnimationFrame(tryScroll);
+                }
+            }, 120);
+        };
+
+        requestAnimationFrame(tryScroll);
+    };
+
+    // Main function to determine which scroll function to call
+    const handleScroll = () => {
+        if (!hash) {
+            scrollToTop();
+        } else {
+            const elementId = hash.replace("#", "");
+            const cancelled = { current: false };
+
+            scrollToElement(elementId, cancelled);
+
+            return () => {
+                cancelled.current = true;
+            };
+        }
+    };
+
+    useEffect(() => {
+        const cleanup = handleScroll();
+        return cleanup || (() => {});
+    }, [pathname, hash, maxAttempts]);
 
     return null;
 }
 
+ScrollToHash.propTypes = {
+    maxAttempts: PropTypes.number
+};
+
+ScrollToHash.defaultProps = {
+    maxAttempts: 40
+};
+
 function AppContent() {
     return (
         <>
-            <ScrollToTop />
+            <ScrollToHash />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />

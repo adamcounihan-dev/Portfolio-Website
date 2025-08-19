@@ -30,10 +30,6 @@
     box-sizing: border-box;
 }
 
-[id] {
-    scroll-margin-top: 4.5rem;
-}
-
 html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
@@ -71,9 +67,5 @@ p {
 
     p {
         font-size: 1rem;
-    }
-
-    [id] {
-        scroll-margin-top: 4rem;
     }
 }
