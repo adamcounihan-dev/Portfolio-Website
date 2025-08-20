@@ -33,7 +33,7 @@ function Footer() {
                                 rel="noopener noreferrer"
                                 aria-label="Visit my GitHub profile"
                             >
-                                <img src={githubIcon} alt="" className={styles.socialIcon} />
+                                <img src={githubIcon} alt="GitHub Logo" className={styles.socialIcon} />
                                 GitHub
                             </a>
                             <a
@@ -43,7 +43,7 @@ function Footer() {
                                 rel="noopener noreferrer"
                                 aria-label="Visit my LinkedIn profile"
                             >
-                                <img src={linkedinIcon} alt="" className={styles.socialIcon} />
+                                <img src={linkedinIcon} alt="LinkedIn Logo" className={styles.socialIcon} />
                                 LinkedIn
                             </a>
                         </div>
